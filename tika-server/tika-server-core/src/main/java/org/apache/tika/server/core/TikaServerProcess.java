@@ -59,6 +59,7 @@ import org.apache.tika.parser.digestutils.BouncyCastleDigester;
 import org.apache.tika.parser.digestutils.CommonsDigester;
 import org.apache.tika.pipes.emitter.EmitData;
 import org.apache.tika.pipes.fetchiterator.FetchEmitTuple;
+import org.apache.tika.server.core.mbean.MBeanHelper;
 import org.apache.tika.server.core.resource.AsyncEmitter;
 import org.apache.tika.server.core.resource.AsyncParser;
 import org.apache.tika.server.core.resource.AsyncResource;
@@ -332,6 +333,7 @@ public class TikaServerProcess {
                 resourceProviders.add(new SingletonResourceProvider(asyncResource));
                 resourceProviders
                         .add(new SingletonResourceProvider(new TikaServerStatus(serverStatus)));
+                MBeanHelper.registerServerStatusMBean(serverStatus);
             }
             resourceProviders.addAll(loadResourceServices());
             return resourceProviders;
