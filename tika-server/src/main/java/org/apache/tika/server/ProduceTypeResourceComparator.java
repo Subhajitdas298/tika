@@ -84,32 +84,42 @@ public class ProduceTypeResourceComparator implements ResourceComparator {
      */
     @Override
     public int compare(OperationResourceInfo oper1, OperationResourceInfo oper2, Message message) {
-        // getting all message context data
-        final String httpMethod = (String) message.get(Message.HTTP_REQUEST_METHOD);
-        final MediaType contentType = JAXRSUtils.toMediaType((String) message
-                .get(Message.CONTENT_TYPE));
-        final List<MediaType> acceptTypes = JAXRSUtils.parseMediaTypes((String) message.get(
-                Message.ACCEPT_CONTENT_TYPE));
+        try {
+            // getting all message context data
+            final String httpMethod = (String) message.get(Message.HTTP_REQUEST_METHOD);
+            final MediaType contentType = JAXRSUtils.toMediaType((String) message
+                    .get(Message.CONTENT_TYPE));
+            final List<MediaType> acceptTypes = JAXRSUtils.parseMediaTypes((String) message.get(
+                    Message.ACCEPT_CONTENT_TYPE));
 
-        LOG.debug("Message Method : " + httpMethod + ", ContentType : " + contentType + ", "
-                + "Accept Types : " + acceptTypes);
+            LOG.debug("Message Method : " + httpMethod + ", ContentType : " + contentType + ", "
+                    + "Accept Types : " + acceptTypes);
 
-        int result = compareProduceTypes(oper1, oper2, acceptTypes);
+            String m1Name =
+                    oper1.getClassResourceInfo().getServiceClass().getName() + "#"
+                            + oper1.getMethodToInvoke().getName();
+            String m2Name =
+                    oper2.getClassResourceInfo().getServiceClass().getName() + "#"
+                            + oper2.getMethodToInvoke().getName();
 
-        String m1Name =
-                oper1.getClassResourceInfo().getServiceClass().getName() + "#"
-                        + oper1.getMethodToInvoke().getName();
-        String m2Name =
-                oper2.getClassResourceInfo().getServiceClass().getName() + "#"
-                        + oper2.getMethodToInvoke().getName();
+            LOG.debug("Choosing Between " + m1Name + " and " + m2Name);
 
-        if (result != 0) {
-            String chosen = result == -1 ? m1Name : m2Name;
-            LOG.debug("Between " + m1Name + " and " + m2Name + ", "
-                    + chosen + " is chosen for handling the current request");
+            int result = compareProduceTypes(oper1, oper2, acceptTypes);
+
+            if (result != 0) {
+                String chosen = result == -1 ? m1Name : m2Name;
+                LOG.debug("Between " + m1Name + " and " + m2Name + ", "
+                        + chosen + " is chosen for handling the current request");
+            } else {
+                LOG.debug("Between " + m1Name + " and " + m2Name + ", "
+                        + " NONE is chosen for handling the current request");
+            }
+
+            return result;
+        } catch (Exception e) {
+            LOG.error("Exception comparing methods. Proceeding with no choice", e);
+            return 0;
         }
-
-        return result;
     }
 
     /**
@@ -133,13 +143,13 @@ public class ProduceTypeResourceComparator implements ResourceComparator {
         // calculate the max priority for both handlers
         int oper1Priority = op1Matched.stream()
                 .mapToInt(PRIORITIZED_MEDIA_LIST::indexOf)
-                .max().getAsInt();
+                .max().orElse(-1);
         int oper2Priority = op2Matched.stream()
                 .mapToInt(PRIORITIZED_MEDIA_LIST::indexOf)
-                .max().getAsInt();
+                .max().orElse(-1);
 
         // final calculation
-        return oper1Priority == oper2Priority ? 0 : (oper1Priority > oper2Priority ? -1 : 1);
+        return Integer.compare(oper2Priority, oper1Priority);
     }
 
 }
