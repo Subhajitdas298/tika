@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.apache.tika</groupId>
     <artifactId>tika-parent</artifactId>
-    <version>2.2.2-SNAPSHOT</version>
+    <version>2.3.1-SNAPSHOT</version>
     <relativePath>../tika-parent/pom.xml</relativePath>
   </parent>
 
@@ -127,7 +127,7 @@
     <dependency>
       <groupId>org.glassfish.tyrus.bundles</groupId>
       <artifactId>tyrus-standalone-client</artifactId>
-      <version>2.0.0</version>
+      <version>2.0.2</version>
     </dependency>
     <!-- after we migrate everything to junit5, we can get rid of this -->
     <dependency>
@@ -187,6 +187,35 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.4</version>
+        <configuration>
+          <reportPlugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-project-info-reports-plugin</artifactId>
+              <version>2.8</version>
+              <reports>
+                <report>index</report>
+              </reports>
+            </plugin>
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>findbugs-maven-plugin</artifactId>
+              <version>3.0.5</version>
+              <configuration>
+                <argLine>-Xmx256m</argLine>
+                <argLine>-XX:MaxPermSize=256m</argLine>
+                <timeout>240000</timeout>
+                <effort>max</effort>
+                <failOnError>true</failOnError>
+              </configuration>
+            </plugin>
+          </reportPlugins>
+        </configuration>
+      </plugin>
     </plugins>
 
     <pluginManagement>
@@ -217,6 +246,7 @@
             </lifecycleMappingMetadata>
           </configuration>
         </plugin>
+
       </plugins>
     </pluginManagement>
   </build>

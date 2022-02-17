@@ -1,3 +1,47 @@
+Release 2.3.1 - ???
+
+   * NOTE: To save on resources, we no longer include the
+     deeplearning4j dependencies in the tika-dl jar. The dependencies for the
+     tika-dl package must be provided by users.  See:
+     https://github.com/apache/tika/blob/main/tika-parsers/tika-parsers-ml/tika-dl/pom.xml
+     for the dependencies that must be provided at run-time (TIKA-3676).
+
+   * Upgrade deeplearning4j to 1.0.0-M1.1 (TIKA-3458).
+
+Release 2.3.0 - 02/02/2022
+
+   * Upgrade to Apache POI 5.2.0. This is the first upgrade to POI
+     5.x and represents a major refactoring. Users may experience
+     significantly more logging (TIKA-3164).
+
+   * Upgrade to log4j2 2.17.1 (TIKA-3638).
+
+   * Improve consistency in reporting package-entry divs across
+     all parsers for embedded files (TIKA-3644). This leads
+     to some more text (embedded file names) in files with
+     many embedded attachments.
+
+   * Improve configuration of maps as params for parsers in
+     TikaConfig (TIKA-3645).
+
+   * Improve identification of iWorks 13 files and add parsing
+     for thumbnails, some metadata and attachments (TIKA-3634).
+     Skip handling of .iwa files, which are not yet supported.
+
+   * Limit the default in-memory processing (maxMainMemoryBytes) in
+     the PDFParser to 512MB as in the 1.x branch (TIKA-3642).
+
+   * Added IDML Parser from 1.x series to 2.x series (TIKA-3188).
+
+   * Extract annotation types and subtypes for PDFs into metadata (TIKA-3653).
+
+   * Add metadata value for PDFs that contain 3D annotations (TIKA-3653).
+
+   * Add parser for Translation Memory eXchange (TMX) files (TIKA-3660).
+
+   * Add Bill of Materials (Maven BOM) for centralized module version management (TIKA-3367).
+
+
 Release 2.2.1 - 12/19/2021
 
    * Fix multithreading bug for ooxml files (TIKA-3627).

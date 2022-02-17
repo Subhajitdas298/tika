@@ -31,7 +31,7 @@
 
   <groupId>org.apache.tika</groupId>
   <artifactId>tika-parent</artifactId>
-  <version>2.2.2-SNAPSHOT</version>
+  <version>2.3.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Apache Tika parent</name>
@@ -104,13 +104,6 @@
       </roles>
     </developer>
     <developer>
-      <name>Keith Bennett</name>
-      <id>kbennett</id>
-      <roles>
-        <role>committer</role>
-      </roles>
-    </developer>
-    <developer>
       <name>Mark Harwood</name>
       <id>mharwood</id>
       <roles>
@@ -161,13 +154,6 @@
     <developer>
       <name>Sami Siren</name>
       <id>siren</id>
-      <roles>
-        <role>committer</role>
-      </roles>
-    </developer>
-    <developer>
-      <name>Jukka Zitting</name>
-      <id>jukka</id>
       <roles>
         <role>committer</role>
       </roles>
@@ -232,6 +218,34 @@
         <role>committer</role>
       </roles>
     </developer>
+    <developer>
+      <name>Jukka Zitting</name>
+      <id>jukka</id>
+      <roles>
+        <role>emeritus</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Julien Nioche</name>
+      <id>jnioche</id>
+      <roles>
+        <role>emeritus</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Keith Bennett</name>
+      <id>kbennett</id>
+      <roles>
+        <role>emeritus</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Niall Pemberton</name>
+      <id>niallp</id>
+      <roles>
+        <role>emeritus</role>
+      </roles>
+    </developer>
   </developers>
   <contributors>
     <contributor>
@@ -241,15 +255,9 @@
       </roles>
     </contributor>
     <contributor>
-      <name>Bertrand Delacretaz</name>
+      <name>Bertrand Delacrétaz</name>
       <roles>
         <role>mentor</role>
-      </roles>
-    </contributor>
-    <contributor>
-      <name>Niall Pemberton</name>
-      <roles>
-        <role>emeritus</role>
       </roles>
     </contributor>
   </contributors>
@@ -259,27 +267,27 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
-    <project.build.outputTimestamp>1</project.build.outputTimestamp>
+    <project.build.outputTimestamp>1643836750</project.build.outputTimestamp>
     <!-- plugin versions -->
     <checkstyle.plugin.version>3.1.2</checkstyle.plugin.version>
-    <forbiddenapis.version>3.1</forbiddenapis.version>
+    <forbiddenapis.version>3.2</forbiddenapis.version>
     <groovy.maven.version>2.1.1</groovy.maven.version>
-    <maven.antrun.version>1.8</maven.antrun.version>
+    <maven.antrun.version>3.0.0</maven.antrun.version>
     <maven.assembly.version>3.3.0</maven.assembly.version>
-    <maven.bundle.version>5.1.2</maven.bundle.version>
-    <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+    <maven.bundle.version>5.1.4</maven.bundle.version>
+    <maven.compiler.plugin.version>3.9.0</maven.compiler.plugin.version>
     <maven.failsafe.version>3.0.0-M5</maven.failsafe.version>
-    <maven.javadoc.version>3.2.0</maven.javadoc.version>
-    <maven.jar.version>3.2.0</maven.jar.version>
+    <maven.javadoc.version>3.3.1</maven.javadoc.version>
+    <maven.jar.version>3.2.2</maven.jar.version>
     <maven.scr.version>1.26.4</maven.scr.version>
     <maven.surefire.version>3.0.0-M5</maven.surefire.version>
     <maven.shade.version>3.2.4</maven.shade.version>
-    <puppycrawl.version>9.2</puppycrawl.version>
+    <puppycrawl.version>9.3</puppycrawl.version>
     <rat.version>0.13</rat.version>
 
     <!-- dependency versions -->
-    <aws.s3.version>1.12.129</aws.s3.version>
-    <aws.transcribe.version>1.12.129</aws.transcribe.version>
+    <aws.s3.version>1.12.155</aws.s3.version>
+    <aws.transcribe.version>1.12.155</aws.transcribe.version>
     <asm.version>9.2</asm.version>
     <boilerpipe.version>1.1.0</boilerpipe.version>
     <!-- used by POI, PDFBox and Jackcess ...try to sync -->
@@ -297,16 +305,16 @@
     <commons.logging.version>1.2</commons.logging.version>
     <commons.math3.version>3.6.1</commons.math3.version>
     <ctakes.version>4.0.0.1</ctakes.version>
-    <cxf.version>3.4.5</cxf.version>
+    <cxf.version>3.5.0</cxf.version>
     <ddplist.version>1.23</ddplist.version>
-    <dl4j.version>1.0.0-beta6</dl4j.version>
+    <dl4j.version>1.0.0-M1.1</dl4j.version>
     <!-- fakeload versions &gt; 0.4.0 require java > 8 -->
     <fakeload.version>0.4.0</fakeload.version>
     <geoapi.version>3.0.1</geoapi.version>
-    <google.cloud.version>2.2.2</google.cloud.version>
+    <google.cloud.version>2.4.1</google.cloud.version>
     <gson.version>2.8.9</gson.version>
     <guava.version>31.0.1-jre</guava.version>
-    <h2.version>2.0.202</h2.version>
+    <h2.version>2.1.210</h2.version>
     <httpcomponents.version>4.5.13</httpcomponents.version>
     <httpcore.version>4.4.15</httpcore.version>
     <imageio.version>1.4.0</imageio.version>
@@ -317,11 +325,11 @@
     <javax.annotation.version>1.3.2</javax.annotation.version>
     <javax.jcr.version>2.0</javax.jcr.version>
     <javax.rest.version>2.1.1</javax.rest.version>
-    <jaxb.version>2.3.5</jaxb.version>
+    <jaxb.version>2.3.6</jaxb.version>
     <jbig2.version>3.0.3</jbig2.version>
     <jdom2.version>2.0.6.1</jdom2.version>
     <jempbox.version>1.8.16</jempbox.version>
-    <jetty.version>9.4.44.v20210927</jetty.version>
+    <jetty.version>9.4.45.v20220203</jetty.version>
     <jhighlight.version>1.0.3</jhighlight.version>
     <jna.version>5.10.0</jna.version>
     <joda.time.version>2.10.10</joda.time.version>
@@ -329,7 +337,7 @@
     <junit4.version>4.13.2</junit4.version>
     <junit5.version>5.8.2</junit5.version>
     <juniversalchardet.version>1.0.3</juniversalchardet.version>
-    <junrar.version>7.4.0</junrar.version>
+    <junrar.version>7.4.1</junrar.version>
     <libpst.version>0.9.3</libpst.version>
     <log4j2.version>2.17.1</log4j2.version>
     <lombok.version>1.18.20</lombok.version>
@@ -338,7 +346,7 @@
     <microsoft.translator.version>0.6.2</microsoft.translator.version>
     <!-- 0.8.6 is built with java 11 and does not work with Java 8 -->
     <mime4j.version>0.8.4</mime4j.version>
-    <mockito.version>4.2.0</mockito.version>
+    <mockito.version>4.3.1</mockito.version>
     <netcdf-java.version>4.5.5</netcdf-java.version>
     <opencsv.version>2.3</opencsv.version>
     <objenesis.version>3.2</objenesis.version>
@@ -350,34 +358,39 @@
     <parso.version>2.0.14</parso.version>
     <!-- some conflict with slf4j with >= 4.12.0
           causes failure in testForkParser -->
-    <pax.exam.version>4.11.0</pax.exam.version>
+    <pax.exam.version>4.13.1</pax.exam.version>
     <pdfbox.version>2.0.25</pdfbox.version>
     <!-- NOTE: sync tukaani version with commons-compress in tika-parsers -->
-    <poi.version>4.1.2</poi.version>
+    <poi.version>5.2.0</poi.version>
     <quartz.version>2.3.2</quartz.version>
     <rome.version>1.18.0</rome.version>
-    <scm.version>1.12.0</scm.version>
+    <scm.version>1.12.2</scm.version>
     <sis.version>1.1</sis.version>
     <!-- we'll need to stay on 1.7 until we're java modularized ? -->
-    <slf4j.version>1.7.32</slf4j.version>
+    <slf4j.version>1.7.36</slf4j.version>
     <solrj.version>8.11.1</solrj.version>
-    <spring.version>5.3.13</spring.version>
+    <spring.version>5.3.15</spring.version>
     <sqlite.version>3.36.0.3</sqlite.version>
     <tagsoup.version>1.2.1</tagsoup.version>
-    <test.containers.version>1.16.2</test.containers.version>
+    <test.containers.version>1.16.3</test.containers.version>
     <!-- NOTE: sync tukaani version with commons-compress in tika-parent-->
     <tukaani.version>1.9</tukaani.version>
-    <twelvemonkeys.version>3.8.0</twelvemonkeys.version>
+    <twelvemonkeys.version>3.8.1</twelvemonkeys.version>
     <uima.version>3.2.0</uima.version>
     <uimafit.version>3.2.0</uimafit.version>
     <vorbis.version>0.8</vorbis.version>
-    <xerces.version>2.12.1</xerces.version>
+    <xerces.version>2.12.2</xerces.version>
     <xmpcore.version>6.1.11</xmpcore.version>
-    <zstd.version>1.5.0-5</zstd.version>
+    <zstd.version>1.5.2-1</zstd.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>it.unimi.dsi</groupId>
+        <artifactId>fastutil</artifactId>
+        <version>8.5.7</version>
+      </dependency>
       <dependency>
         <groupId>biz.aQute</groupId>
         <artifactId>bndlib</artifactId>
@@ -578,10 +591,17 @@
         <artifactId>javax.xml.soap-api</artifactId>
         <version>1.4.0</version>
       </dependency>
+      <!-- dependency convergence problems
+       with jakarata.activation if > 2.0.1 -->
       <dependency>
         <groupId>org.jvnet.staxex</groupId>
         <artifactId>stax-ex</artifactId>
         <version>2.0.1</version>
+      </dependency>
+      <dependency>
+        <groupId>xerces</groupId>
+        <artifactId>xercesImpl</artifactId>
+        <version>${xerces.version}</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
@@ -624,7 +644,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>2.8.1</version>
+        <version>2.9.0</version>
         <configuration>
           <generateBackupPoms>false</generateBackupPoms>
         </configuration>
@@ -635,10 +655,7 @@
         <artifactId>ossindex-maven-plugin</artifactId>
         <version>3.1.0</version>
         <configuration>
-          <fail>false</fail>
-          <excludeCoordinates>
-<!--            <coordinate>            </coordinate> -->
-          </excludeCoordinates>
+          <fail>true</fail>
         </configuration>
         <executions>
           <execution>
@@ -650,18 +667,6 @@
           </execution>
         </executions>
       </plugin>
-      <!-- example of how to ignore coordinates
-                <configuration>
-                    <excludeCoordinates>
-                        <exclude>
-                            <groupId>com.h2database</groupId>
-                            <artifactId>h2</artifactId>
-                            <version>1.4.197</version>
-                        </exclude>
-                    </excludeCoordinates>
-                </configuration>
-      -->
-
       <plugin>
         <groupId>de.thetaphi</groupId>
         <artifactId>forbiddenapis</artifactId>
@@ -722,7 +727,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
-        <version>3.0.0-M4</version>
+        <version>3.0.0-M5</version>
         <configuration>
           <autoVersionSubmodules>true</autoVersionSubmodules>
         </configuration>
@@ -768,7 +773,7 @@
               <rules>
                 <bannedDependencies>
                   <excludes>
-                    <exclude>org.apache.logging.log4j:log4j-core:(,2.17.0)</exclude>
+                    <exclude>org.apache.logging.log4j:log4j-core:(,2.17.1)</exclude>
                   </excludes>
                 </bannedDependencies>
               </rules>
@@ -911,8 +916,15 @@
       </build>
     </profile>
   </profiles>
-
+<!--
+    <connection>scm:git:https://github.com/apache/</connection>
+    <developerConnection>scm:git:https://github.com/apache/</developerConnection>
+    <url>https://github.com/apache/tika</url>
+-->
   <scm>
-    <tag>2.2.1-rc2</tag>
+    <tag>2.3.0-rc1</tag>
+    <connection>scm:git:https://github.com/apache/</connection>
+    <developerConnection>scm:git:https://github.com/apache/</developerConnection>
+    <url>https://github.com/apache/tika</url>
   </scm>
 </project>
